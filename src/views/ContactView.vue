@@ -1,15 +1,11 @@
+<script setup>
+import {useFlash} from "@/composables/useFlash"
+
+let { flash } = useFlash();
+</script>
+
 <template>
-  <div class="contact">
-    <h1>This is a contact page</h1>
+  <div>
+    <button @click="flash('Success', 'It is work from contact view.', 'error')">Click me</button>
   </div>
 </template>
-
-<style>
-@media (min-width: 1024px) {
-  .contact {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>

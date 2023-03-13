@@ -1,29 +1,13 @@
-<script setup>
-import TheWelcome from '../components/TheWelcome.vue'
-import { ref } from "vue";
+<script>
+import flash from '@/mixins/flash';
 
-// eslint-disable-next-line no-undef
-let message = $ref("Hello World!");
-// let message = ref("Hello World!");
-// setTimeout(() => {
-//   message.value = "I have been changed!";
-// }, 2000);
-
-setTimeout(() => {
-  message = "I have been changed!";
-}, 2000);
-
-let alertSomething = () => {
-  alert("Do Something!")
-};
+export default {
+  mixins: [flash]
+}
 </script>
 
 <template>
   <main>
-    <TheWelcome />
-    <p>{{ message }}</p>
-    <input type="text" v-model="message" />
-
-    <button @click="alertSomething">Click</button>
+    <button @click="flash('It is work on home view.')">Click me</button>
   </main>
 </template>
