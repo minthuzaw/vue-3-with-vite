@@ -1,29 +1,16 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
-import { ref } from "vue";
+import TabTextarea from "@/components/TabTextarea.vue";
+import {ref} from "vue";
 
-// eslint-disable-next-line no-undef
-let message = $ref("Hello World!");
-// let message = ref("Hello World!");
-// setTimeout(() => {
-//   message.value = "I have been changed!";
-// }, 2000);
+let comment = ref('text test');
 
-setTimeout(() => {
-  message = "I have been changed!";
+setTimeout(()=>{
+  comment.value = "changed";
 }, 2000);
-
-let alertSomething = () => {
-  alert("Do Something!")
-};
 </script>
 
 <template>
   <main>
-    <TheWelcome />
-    <p>{{ message }}</p>
-    <input type="text" v-model="message" />
-
-    <button @click="alertSomething">Click</button>
+    <TabTextarea v-model="comment" style="width: 100%; height: 300px"/>
   </main>
 </template>
