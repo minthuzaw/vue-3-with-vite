@@ -1,11 +1,12 @@
 <script setup>
 // import TheWelcome from '../components/TheWelcome.vue'
-import Quiz from "@/components/Quiz/Quiz.vue";
+import TheQuiz from "@/components/Quiz/TheQuiz.vue";
+import { state } from "@/store/quizStore";
 </script>
 
 <template>
   <main>
 <!--    <TheWelcome />-->
-    <Quiz :quiz="{name: 'My First Quiz', question: []}"/>
+    <TheQuiz :quiz="state"/>
   </main>
 </template>
